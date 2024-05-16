@@ -8,11 +8,11 @@ import "../CSS/Cards.css";
 function Card({ data, IsLoggedIn, isInWishlist, removeFromScreen }) {
     const [cookies, setCookie, removeCookie] = useCookies(['userId']);
     const userId = cookies.userId;
-
+    const url = "https://project-blend-server.onrender.com/";
     const wishHandler = async (symbol) => {
         try {
             console.log(symbol);
-            const response = await axios.post(`http://localhost:5000/${isInWishlist ? 'removefromlist' : 'addtolist'}`, {
+            const response = await axios.post(`${url}/${isInWishlist ? 'removefromlist' : 'addtolist'}`, {
                 userId: userId,
                 symbol
             });

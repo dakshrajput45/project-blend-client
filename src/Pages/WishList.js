@@ -12,6 +12,7 @@ function WishList({ stockData, IsLoggedIn }) {
   const [userData, setUserData] = useState("");
   const [loading, setLoading] = useState(true);
   
+  const url = "https://project-blend-server.onrender.com/";
 
   const userId = cookies.userId;
 
@@ -19,7 +20,7 @@ function WishList({ stockData, IsLoggedIn }) {
 
   const getUserData = async () => {
     try {
-      const response = await axios.post(`http://localhost:5000/watchlist`, {
+      const response = await axios.post(`${url}/watchlist`, {
         userId: userId,
       });
       setUserData(response.data.data.watchList);

@@ -8,6 +8,7 @@ import "../CSS/SignupForm.css"
 import axios from "axios";
 
 function SignupForm({setIsLoggedIn}) {
+    const url = "https://project-blend-server.onrender.com/";
     const navigate=useNavigate();
     const [formData, setFormData] = useState({
         userName: "", email: "", password: "", confirmPassword: ""
@@ -30,7 +31,7 @@ function SignupForm({setIsLoggedIn}) {
             toast.error("Passwords Do Not Match");
         } else {
             try {
-                const {data} = await axios.post(`http://localhost:5000/register`, formData);
+                const {data} = await axios.post(`${url}/register`, formData);
                 if (data.status === "ok") {
                     // User registered successfully
                     await setCookie("userId",data.data);
