@@ -1,0 +1,15 @@
+
+.Watchlist {
+    display: flex;
+    align-items: cneter;
+    text-align: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.empty-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+}
