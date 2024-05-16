@@ -12,7 +12,7 @@ function WishList({ stockData, IsLoggedIn }) {
   const [userData, setUserData] = useState("");
   const [loading, setLoading] = useState(true);
   
-  const url = "https://project-blend-server.onrender.com/";
+  const url = "https://project-blend-server.onrender.com";
 
   const userId = cookies.userId;
 

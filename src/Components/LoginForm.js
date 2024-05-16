@@ -8,7 +8,7 @@ import {useCookies} from "react-cookie";
 import axios from "axios";
 
 function Login({ setIsLoggedIn }) {
-  const url = "https://project-blend-server.onrender.com/";
+  const url = "https://project-blend-server.onrender.com";
   const navigate = useNavigate();
   const [formData, setFormData] = useState({ email: "", password: "" });
   const [showPassword, setShowPassword] = useState(false);

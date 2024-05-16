@@ -8,7 +8,7 @@ import "../CSS/SignupForm.css"
 import axios from "axios";
 
 function SignupForm({setIsLoggedIn}) {
-    const url = "https://project-blend-server.onrender.com/";
+    const url = "https://project-blend-server.onrender.com";
     const navigate=useNavigate();
     const [formData, setFormData] = useState({
         userName: "", email: "", password: "", confirmPassword: ""

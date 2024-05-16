@@ -8,7 +8,7 @@ import "../CSS/Cards.css";
 function Card({ data, IsLoggedIn, isInWishlist, removeFromScreen }) {
     const [cookies, setCookie, removeCookie] = useCookies(['userId']);
     const userId = cookies.userId;
-    const url = "https://project-blend-server.onrender.com/";
+    const url = "https://project-blend-server.onrender.com";
     const wishHandler = async (symbol) => {
         try {
             console.log(symbol);
