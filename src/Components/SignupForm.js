@@ -6,6 +6,7 @@ import { useCookies } from "react-cookie";
 import {toast} from "react-hot-toast"
 import "../CSS/SignupForm.css"
 import axios from "axios";
+import { Error } from "@mui/icons-material";
 
 function SignupForm({setIsLoggedIn}) {
     const url = "https://project-blend-server.onrender.com";
@@ -38,15 +39,15 @@ function SignupForm({setIsLoggedIn}) {
                     setIsLoggedIn(true);
                     toast.success("Account Created");
                     navigate("/");
-                } else if (data.error === "User Exists") {
-                    // User already exists
-                    toast.error("User already exists");
                 } else {
-                    // Other errors (handle according to your backend response)
                     toast.error("An error occurred ");
                 }
-            } catch (err) {
-                console.error(err);
+            } catch (error) {
+                console.error(Error);
+                if (error.response.status === 409) {
+                    toast.error("User Exist");
+                }
+                else
                 toast.error("An error occurred while creating the account");
             }
         }
